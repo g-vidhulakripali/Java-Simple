@@ -83,20 +83,19 @@ public class Math {
     public static boolean checkIfPowerOfNumber(int num, int pow) {
         if (num == 1) {
             return true;
-        } else {
-            int tempNum = num;
-            while (tempNum != 1) {
-                if (tempNum % pow != 0) {
-                    return false;
-                }
-                tempNum = tempNum / 2;
-            }
-            return true;
         }
+        int tempNum = num;
+        while (tempNum != 1) {
+            if (tempNum % pow != 0) {
+                return false;
+            }
+            tempNum = tempNum / 2;
+        }
+        return true;
     }
 
     public static int powerOfNumber(int num, int pow) {
-        int tempNum = num * 1;
+        int tempNum = num;
         for (int i = 1; i < pow; i++) {
             tempNum = num * tempNum;
         }
@@ -105,26 +104,23 @@ public class Math {
 
     public static int checkIfThatIsTheNumber() {
         int i = 1;
-        boolean isNum = false;
-        while (!isNum) {
+        while (true) {
             int numDivisor = findNumberOfDivisor(i);
             int cubeDivisor = findNumberOfDivisor(powerOfNumber(i, 3));
             int gcd = findTheGCDOfTwoNumbers(numDivisor, cubeDivisor);
             if (!checkIfPowerOfNumber(gcd, 2)) {
-                isNum = true;
                 return i;
             }
             i++;
         }
-        return 1;
     }
 
 
     public static void main(String[] args) {
-        //            findNumberOfDivisor();
-        //        findTheGCDOfTwoNumbers();
-        //checkIfPowerOfTwo();
-        //        System.out.println(powerOfNumber(3,2));
-        System.out.println(checkIfThatIsTheNumber());
+//         findNumberOfDivisorWithInput();
+//         findTheGCDOfTwoNumbersWithInput();
+//         checkIfPowerOfTwoWithInput();
+//         System.out.println(powerOfNumber(3,2));
+        System.out.println("The Number is " + checkIfThatIsTheNumber());
     }
 }
