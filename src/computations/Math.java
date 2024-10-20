@@ -121,10 +121,10 @@ public class Math {
 
 
     public static void main(String[] args) {
-//            findNumberOfDivisor();
-//        findTheGCDOfTwoNumbers();
-//checkIfPowerOfTwo();
-//        System.out.println(powerOfNumber(3,2));
+        //            findNumberOfDivisor();
+        //        findTheGCDOfTwoNumbers();
+        //checkIfPowerOfTwo();
+        //        System.out.println(powerOfNumber(3,2));
         System.out.println(checkIfThatIsTheNumber());
     }
 }
